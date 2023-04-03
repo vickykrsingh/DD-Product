@@ -11,7 +11,12 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoute from "./routes/productRoutes.js";
 import cartRoute from "./routes/cartRoutes.js"
 import paymentRoutes from "./routes/paymentRoutes.js"
+<<<<<<< HEAD
 import path from 'path';
+=======
+import path from 'path'
+import { fileURLToPath } from 'url';
+>>>>>>> 9244225aa466f1f5090ee7ec9bd6a1e8221ff2f0
 
 
 // rest object
@@ -22,6 +27,12 @@ dotenv.config();
 
 // configuration DATABASE
 connectDB();
+
+// esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 
 export const instance = new Razorpay({
   key_id:process.env.RAZORPAY_KEY_ID,
