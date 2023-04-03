@@ -10,6 +10,12 @@ router.get('/all-order',requireSignIn,userOrderController)
 router.get('/all-admin-order',requireSignIn,isAdmin,adminAllOrder)
 router.put('/order-status/:orderId',requireSignIn,isAdmin,orderStatusUpdate)
 router.post('/search-order',requireSignIn,isAdmin,searchAdminOrder)
+router.get('/get-key',(req,res)=>{
+    res.status(200).send({
+        success:true,
+        key:process.env.RAZORPAY_KEY_ID
+    })
+  })
 
 
 

@@ -1,4 +1,4 @@
-// packages import 
+// packages import
 import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
@@ -11,7 +11,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoute from "./routes/productRoutes.js";
 import cartRoute from "./routes/cartRoutes.js"
 import paymentRoutes from "./routes/paymentRoutes.js"
-import path from 'path'
+import path from 'path';
 
 
 // rest object
@@ -51,12 +51,6 @@ app.use('*',function(req,res){
   res.sendFile(path.join(__dirname,"*./client/build/index.html"));
 })
 
-app.get('/api/get-key',(req,res)=>{
-  res.status(200).send({
-      success:true,
-      key:process.env.RAZORPAY_KEY_ID
-  })
-})
 
 // Server listening
 app.listen(PORT);
