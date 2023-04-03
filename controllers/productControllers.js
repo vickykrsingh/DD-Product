@@ -298,3 +298,4 @@ export const similarProduct = async (req, res) => {
     });
   }
 };
+
